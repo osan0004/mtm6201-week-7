@@ -1,3 +1,13 @@
+:root{
+  --primary-color: plum;
+  --secondary-color: purple;
+  --light-color: white;
+  --dark-color:black;
+  --special-color:tomato;
+  --medium-font:1.25rem;
+  --large-font:2rem;
+}
+
 /* .is class name selector */
 .container{
   max-width: 900px;
@@ -24,7 +34,7 @@ nav li a:visited{
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
-  color: black;
+  color: var(--dark-color);
   transition: transform .5s;
 }
 
@@ -40,4 +50,58 @@ nav li a:active{
 
 /* :link, :visited, :hover, :focus, :active are pseudo classes */
 
+/* [] is for attribute selector */
+a[href="#"]{
+  border: 1px solid var(--primary-color);
+}
 
+/* ^ is for start with */
+a[href^="http"]{
+  border-left: 8px solid var(--secondary-color);
+}
+
+/* > is child combinator */
+main > p{
+  font-size: var(--medium-font);
+}
+
+/* + is adjacent combinator (right next to the selector)*/
+h2 + p{
+  background-color: rgba(0, 0, 0, 0.478);
+  color: var(--light-color);
+  padding: 1rem;
+}
+
+/* chnage the coursor to a pointer */
+.stars span{
+  cursor: pointer;  
+  transition: opacity .5s;
+}
+
+/* ~ is sibling combinator */
+.stars span:hover~span{
+  opacity: .4;
+}
+
+/* $= is for value  ends with */
+a[href$=".pdf"]{
+  color: var(--special-color);
+}
+
+/* ::after is pseudo element */
+a[href$=".pdf"]::after{
+  content:"\2193";
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+h2+p:first-line{
+  color:var(--primary-color);
+}
+
+h3+p::first-letter{
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: .25rem;
+  margin-right: .10rem;
+}
