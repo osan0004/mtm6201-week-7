@@ -105,3 +105,12 @@ h3+p::first-letter{
   padding: .25rem;
   margin-right: .10rem;
 }
+
+.davidmedia{
+  display: block;
+  width: calc(100%-4rem-4rem-8px);
+  padding: 2rem;
+  margin: 2rem;
+  background: var(--secondary-color);
+  color: var(--light-color);
+}
